@@ -1,0 +1,104 @@
+body {
+    background-color: #222;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px; /* Ajout de marge intérieure */
+    overflow-x: hidden; /* Empêcher le défilement horizontal */
+}
+
+.gallery-container {
+    text-align: center;
+    margin: 0 auto; /* Centrer la galerie */
+    max-width: 1200px; /* Limiter la largeur maximale */
+    padding: 20px; /* Ajout de marge intérieure */
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.gallery {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes par défaut */
+}
+
+.gallery-item {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.title {
+    margin-top: 10px;
+    font-size: 14px;
+    position: relative; /* Permet de positionner l'étoile absolument à l'intérieur */
+}
+
+.title a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px; /* Ajout de marge pour séparer le texte de l'étoile */
+}
+
+.title a:hover {
+    text-decoration: underline;
+}
+
+.star {
+    position: absolute;
+    left: 0; /* Place l'étoile à gauche */
+    color: gold; /* Couleur de l'étoile */
+}
+
+/* Media Queries pour différentes tailles d'écran */
+@media (max-width: 1200px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour les écrans de moins de 1200px */
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: 1fr; /* 1 colonne pour les écrans de moins de 768px */
+    }
+}
